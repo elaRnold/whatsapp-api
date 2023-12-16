@@ -9,9 +9,10 @@ def sendMessageWhatsapp(data):
         response = requests.post(api_url, data = json.dumps(data), headers = headers)
 
         if response.status_code == 200:
-            return true
+            return True
         
-        return false
+        return False
+
     except Exception as exc:
         print(exc)
-        return false
+        return False

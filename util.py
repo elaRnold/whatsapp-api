@@ -23,14 +23,25 @@ def getTextUser(message):
     
     return text
 
-def TextMessage(text, number):
+def TextMessage(number):
     data = {
                 "messaging_product": "whatsapp",    
                 "recipient_type": "individual",
                 "to": number,
                 "type": "text",
                 "text": {
-                    "body": text
+                    "body": "~ arnaldobenavides.ab@gmail.com\n~ arnaldobenavides@uninorte.edu.co\n~ https://github.com/elaRnold/elaRnold\n~ https://www.linkedin.com/in/arnaldobr/"
+                }
+            }
+    return data
+
+def DocumentMessage(number):
+    data = {
+                "messaging_product": "whatsapp",
+                "to": number,
+                "type": "document",
+                "document": {
+                    "link": "https://uninorte-my.sharepoint.com/:b:/g/personal/arnaldobenavides_uninorte_edu_co/Ed-xKJHgCyBPjsqFMsKIn4UBY-q5Gv-y3NjyHqBXnOvaEQ?e=DaduJS"
                 }
             }
     return data
@@ -44,7 +55,7 @@ def ButtonsMessage(number):
                 "interactive": {
                     "type": "button",
                     "body": {
-                        "text": "¿confirmas tu registro?😜"
+                        "text": "¡Hola 👋!, Gracias por contactarte con el Ing. Arnaldo Benavides. Soy su asistente bot👾 y es un placer atenderte 😊. En breve serás contactado, mientras, te dejo algunas opciones que podrían serte de utilidad 😎.\n\nHello 👋!, Thank you for contacting Engineer Arnaldo Benavides. I am his bot's assistant👾 and it is a pleasure to serve you 😊. You will be contacted shortly, meanwhile, I leave you some options that could be useful to you 😎."
                     },
                     "action": {
                         "buttons": [
@@ -52,14 +63,14 @@ def ButtonsMessage(number):
                                 "type": "reply",
                                 "reply": {
                                     "id": "001",
-                                    "title": "Si"
+                                    "title": "Social networks"
                                 }
                             },
                             {
                                 "type": "reply",
                                 "reply": {
                                     "id": "002",
-                                    "title": "No"
+                                    "title": "CV"
                                 }
                             }
                         ]
