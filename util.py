@@ -37,11 +37,12 @@ def TextMessage(number):
 
 def DocumentMessage(number):
     data = {
-                "messaging_product": "whatsapp",
+                "messaging_product": "whatsapp",    
+                "recipient_type": "individual",
                 "to": number,
-                "type": "document",
-                "document": {
-                    "link": "https://uninorte-my.sharepoint.com/:b:/g/personal/arnaldobenavides_uninorte_edu_co/Ed-xKJHgCyBPjsqFMsKIn4UBY-q5Gv-y3NjyHqBXnOvaEQ?e=DaduJS"
+                "type": "text",
+                "text": {
+                    "body": "A continuación, te dejo el link público del CV de mi creador:\nBelow, I leave you the public link of my creator's CV:\nhttps://uninorte-my.sharepoint.com/:b:/g/personal/arnaldobenavides_uninorte_edu_co/Ed-xKJHgCyBPjsqFMsKIn4UBY-q5Gv-y3NjyHqBXnOvaEQ?e=DaduJS"
                 }
             }
     return data
