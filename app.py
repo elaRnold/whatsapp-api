@@ -38,11 +38,13 @@ def ReceivedMessage():
         return "EVENT_RECEIVED"
 
 def generateMessage(text, number):
-    if text == "Social networks":
+    text = text.lower()
+
+    if "social networks" in text:
         data = util.TextMessage(number)
-    elif text == "CV":
+    elif "cv" in text or "hoja de vida" in text:
         data = util.DocumentMessage(number)
-    else:
+    elif "buenos días" in text or "buenos dias" in text or "buenas tardes" in text or "buenas noches" in text or "hello" in text or "hi" in text or "arnaldo" in text:
         data = util.ButtonsMessage(number)
 
     whatsappservice.sendMessageWhatsapp(data)
