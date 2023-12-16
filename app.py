@@ -39,15 +39,17 @@ def ReceivedMessage():
 
 def generateMessage(text, number):
     text = text.lower()
+    text = text.split(' ')
 
     if "social networks" in text:
         data = util.TextMessage(number)
+        whatsappservice.sendMessageWhatsapp(data)
     elif "cv" in text or "hoja de vida" in text:
         data = util.DocumentMessage(number)
+        whatsappservice.sendMessageWhatsapp(data)
     elif "buenos días" in text or "buenos dias" in text or "buenas tardes" in text or "buenas noches" in text or "hello" in text or "hi" in text or "hola" in text or "arnaldo" in text:
         data = util.ButtonsMessage(number)
-
-    whatsappservice.sendMessageWhatsapp(data)
+        whatsappservice.sendMessageWhatsapp(data)
     
 if(__name__ == "__main__"):
     app.run()
